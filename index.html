@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SM Shadab | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    body {
+      scroll-padding-top: 100px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Top Header -->
+  <header class="top-header">
+    <div class="logo">Shadab<span></span></div>
+    <nav class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-kevin" id="home">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h4>Full Stack Developer</h4>
+        <h1>Hi, I'm <span>SM Shadab</span></h1>
+        <p>From India</p>
+      </div>
+      <div class="hero-image">
+        <img src="profile.jpg" alt="SM Shadab" />
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="container about">
+    <div class="about-image">
+      <img src="profile.jpg" alt="SM Shadab" />
+    </div>
+    <div class="about-text">
+      <h2>About Me</h2>
+      <p>
+        I'm a Computer Science undergraduate from Asansol Engineering College (B.Tech, 2022–2026). I love building full-stack web applications using Java, React.js, MySQL, and MongoDB. I'm a self-driven and detail-oriented developer passionate about clean design and scalable solutions.
+      </p>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="container">
+    <h2>Technical Skills</h2>
+    <ul class="skills">
+      <li>C/C++</li>
+      <li>Java</li>
+      <li>JavaScript</li>
+      <li>Python</li>
+      <li>React.js</li>
+      <li>Tailwind CSS</li>
+      <li>Node.js</li>
+      <li>Express.js</li>
+      <li>MySQL</li>
+      <li>MongoDB</li>
+    </ul>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="container">
+    <h2>Projects</h2>
+    <div class="card">
+      <h3>Library Management System</h3>
+      <p>Full-stack Java web app for managing digital library systems.</p>
+      <p><strong>Tech:</strong> JSP, Servlets, MySQL, HTML, CSS, JS</p>
+      <a href="https://github.com/smshadab786/Library-Management-System" target="_blank">GitHub Repo</a>
+    </div>
+    <div class="card">
+      <h3>Amazon Clone (UI Only)</h3>
+      <p>Frontend clone of Amazon using HTML and CSS with interactive layout.</p>
+      <p><strong>Tech:</strong> HTML, CSS</p>
+      <a href="https://github.com/smshadab786/Amazon_clone" target="_blank">GitHub Repo</a>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education" class="container">
+    <h2>Education</h2>
+    <ul>
+      <li><strong>B.Tech, CSE</strong> - Asansol Engineering College (2022–2026), CGPA: 7.5</li>
+      <li><strong>Class XII</strong> - Hazi Qadam Rasul High School, 75.8%</li>
+      <li><strong>Class X</strong> - Rahamania High School, 75.6%</li>
+    </ul>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <div class="contact-wrapper">
+      <div class="contact-left">
+        <h2>Contact Me</h2>
+        <div class="contact-details">
+          <p><i class="fa-solid fa-paper-plane"></i> smshadab786488@gmail.com</p>
+          <p><i class="fa-solid fa-phone"></i> +91-786488XXXX</p>
+          <div class="contact-social">
+            <a href="https://github.com/smshadab786" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://linkedin.com/in/sm-shadab-b44233286" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/sm__shadab" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+          <a href="SM_Shadab_Resume_NEWW.pdf" class="btn-pink" download>Download CV</a>
+        </div>
+      </div>
+      <div class="contact-right">
+        <form name="submit-to-google-sheet" id="contact-form">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <textarea name="message" placeholder="Your Message" required></textarea>
+          <button type="submit" class="btn-pink">Submit</button>
+        </form>
+        <span id="msg"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 SM Shadab</p>
+  </footer>
+
+  <!-- EmailJS Integration -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+  <script>
+    emailjs.init("SmjNhnsUaUBcVFYSl");
+
+    document.getElementById("contact-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      emailjs.sendForm("service_lglqln9", "template_6dind9g", this)
+        .then(() => {
+          document.getElementById("msg").innerHTML = "Message sent successfully!";
+          setTimeout(() => document.getElementById("msg").innerHTML = "", 5000);
+          this.reset();
+        }, (error) => {
+          console.error("Error:", error);
+          document.getElementById("msg").innerHTML = "Failed to send message.";
+        });
+    });
+  </script>
+</body>
+</html>
